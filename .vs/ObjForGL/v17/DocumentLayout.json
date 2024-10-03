@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\rcato\\source\\repos\\ObjForGL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E9E06189-A2E3-40C7-9754-6E5FED44E610}|ObjForGL\\ObjForGL.vcxproj|C:\\Users\\rcato\\source\\repos\\ObjForGL\\ObjForGL\\objLoader.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E9E06189-A2E3-40C7-9754-6E5FED44E610}|ObjForGL\\ObjForGL.vcxproj|solutionrelative:ObjForGL\\objLoader.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA61A42F-985A-4936-BB25-99026CFAAEC3}|UnitTests\\UnitTests.vcxproj|C:\\Users\\rcato\\source\\repos\\ObjForGL\\UnitTests\\UnitTests.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FA61A42F-985A-4936-BB25-99026CFAAEC3}|UnitTests\\UnitTests.vcxproj|solutionrelative:UnitTests\\UnitTests.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "objLoader.hpp",
+              "DocumentMoniker": "C:\\Users\\rcato\\source\\repos\\ObjForGL\\ObjForGL\\objLoader.hpp",
+              "RelativeDocumentMoniker": "ObjForGL\\objLoader.hpp",
+              "ToolTip": "C:\\Users\\rcato\\source\\repos\\ObjForGL\\ObjForGL\\objLoader.hpp",
+              "RelativeToolTip": "ObjForGL\\objLoader.hpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-02T20:12:43.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UnitTests.cpp",
+              "DocumentMoniker": "C:\\Users\\rcato\\source\\repos\\ObjForGL\\UnitTests\\UnitTests.cpp",
+              "RelativeDocumentMoniker": "UnitTests\\UnitTests.cpp",
+              "ToolTip": "C:\\Users\\rcato\\source\\repos\\ObjForGL\\UnitTests\\UnitTests.cpp",
+              "RelativeToolTip": "UnitTests\\UnitTests.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-02T20:10:54.01Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
