@@ -1,3 +1,15 @@
 ﻿  UnitTests.cpp
-     Creating library C:\Users\rcato\source\repos\ObjForGL\x64\Debug\UnitTests.lib and object C:\Users\rcato\source\repos\ObjForGL\x64\Debug\UnitTests.exp
-  UnitTests.vcxproj -> C:\Users\rcato\source\repos\ObjForGL\x64\Debug\UnitTests.dll
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objForGL.hpp(73,46): warning C4267: 'return': conversion from 'size_t' to 'const int', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objForGL.hpp(74,50): warning C4267: 'return': conversion from 'size_t' to 'const int', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(69,3): warning C4002: too many arguments for function-like macro invocation 'assert'
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(68,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+     Creating library E:\Programming\OpenGL\ObjForGL\x64\Debug\UnitTests.lib and object E:\Programming\OpenGL\ObjForGL\x64\Debug\UnitTests.exp
+  UnitTests.vcxproj -> E:\Programming\OpenGL\ObjForGL\x64\Debug\UnitTests.dll

@@ -1,22 +1,68 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 #include "../ObjForGL/objLoader.hpp"
+#include "../ObjForGl/objForGL.hpp"
 #include <iostream>
+#include <filesystem>
+#include <vector>
+#include <string>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-std::string yoda_path = "yoda/yoda.obj";
+std::string cur_folder = std::filesystem::path(__FILE__).parent_path().string() + "\\";
+std::string yoda_path = cur_folder + "yoda\\yoda.obj";
+std::string two_group_test = cur_folder + "TestObjs\\two_group_test.obj";
 
 namespace UnitTests
 {
 	TEST_CLASS(TestObjLoader)
 	{
 	public:
-		
+
 		TEST_METHOD(TESTLoadObjFile)
 		{
 			ObjLoader obj_loader;
 			Assert::IsTrue(obj_loader.loadObjFile(yoda_path));
+		}
+
+		TEST_METHOD(TESTStringSplit)
+		{
+			std::string line = "v 0.000000 1.000000 0.000000";
+			std::vector<std::string> expected = { "v", "0.000000", "1.000000", "0.000000" };
+			std::vector<std::string> actual;
+			split_string(line, actual, ' ');
+			for (int i = 0; i < expected.size(); i++) {
+				Assert::AreEqual(expected[i], actual[i]);
+			}
+		}
+	};
+
+	TEST_CLASS(TestObjForGL)
+	{
+	public:
+		TEST_METHOD(TESTMeshIsReturnedForEachGroup)
+		{
+			// Test that a mesh is returned for each group in the obj file.
+			ObjLoader obj_loader;
+			obj_loader.loadObjFile(two_group_test);
+			const std::vector<rc::ObjMesh>& meshes = obj_loader.getObjMeshes();
+			Assert::AreEqual(2, (int)meshes.size());
+		}
+
+		TEST_METHOD(TESTMeshesHaveCorrectNumberOfVerticesAndFaces)
+		{
+			ObjLoader obj_loader;
+			obj_loader.loadObjFile(two_group_test);
+			int expected_g1_vertices = 7;
+			int expected_g1_faces = 3;
+			int expected_g2_vertices = 11;
+			int expected_g2_faces = 5;
+			
+			const std::vector<rc::ObjMesh>& meshes = obj_loader.getObjMeshes();
+			Assert::AreEqual(expected_g1_vertices, (int)meshes[0].NV());
+			Assert::AreEqual(expected_g1_faces, (int)meshes[0].NF());
+			Assert::AreEqual(expected_g2_vertices, (int)meshes[1].NV());
+			Assert::AreEqual(expected_g2_faces, (int)meshes[1].NF());
 		}
 	};
 }
