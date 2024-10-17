@@ -38,5 +38,4 @@ E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(121,43): warning C4244: 'a
 E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(121,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   (compiling source file '/UnitTests.cpp')
   
-     Creating library E:\Programming\OpenGL\ObjForGL\x64\Debug\UnitTests.lib and object E:\Programming\OpenGL\ObjForGL\x64\Debug\UnitTests.exp
   UnitTests.vcxproj -> E:\Programming\OpenGL\ObjForGL\x64\Debug\UnitTests.dll
