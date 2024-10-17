@@ -7,16 +7,19 @@
       "RelativeMoniker": "D:0:0:{FA61A42F-985A-4936-BB25-99026CFAAEC3}|UnitTests\\UnitTests.vcxproj|solutionrelative:UnitTests\\UnitTests.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA61A42F-985A-4936-BB25-99026CFAAEC3}|UnitTests\\UnitTests.vcxproj|E:\\PROGRAMMING\\OPENGL\\OBJFORGL\\OBJFORGL\\OBJLOADER.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FA61A42F-985A-4936-BB25-99026CFAAEC3}|UnitTests\\UnitTests.vcxproj|solutionrelative:OBJFORGL\\OBJLOADER.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FA61A42F-985A-4936-BB25-99026CFAAEC3}|UnitTests\\UnitTests.vcxproj|E:\\PROGRAMMING\\OPENGL\\OBJFORGL\\OBJFORGL\\OBJFORGL.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FA61A42F-985A-4936-BB25-99026CFAAEC3}|UnitTests\\UnitTests.vcxproj|solutionrelative:OBJFORGL\\OBJFORGL.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{FA61A42F-985A-4936-BB25-99026CFAAEC3}|UnitTests\\UnitTests.vcxproj|E:\\PROGRAMMING\\OPENGL\\OBJFORGL\\OBJFORGL\\OBJLOADER.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FA61A42F-985A-4936-BB25-99026CFAAEC3}|UnitTests\\UnitTests.vcxproj|solutionrelative:OBJFORGL\\OBJLOADER.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E9E06189-A2E3-40C7-9754-6E5FED44E610}|ObjForGL\\ObjForGL.vcxproj|E:\\Programming\\OpenGL\\ObjForGL\\ObjForGL\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E9E06189-A2E3-40C7-9754-6E5FED44E610}|ObjForGL\\ObjForGL.vcxproj|solutionrelative:ObjForGL\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA61A42F-985A-4936-BB25-99026CFAAEC3}|UnitTests\\UnitTests.vcxproj|C:\\PROGRAM FILES\\MICROSOFT VISUAL STUDIO\\2022\\COMMUNITY\\VC\\TOOLS\\MSVC\\14.41.34120\\INCLUDE\\STRING||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +29,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "string",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\string",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\string",
+              "ViewState": "AgIAALwAAAAAAAAAAAAgwM0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-16T18:53:44.89Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -47,26 +61,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "objForGL.hpp",
               "DocumentMoniker": "E:\\Programming\\OpenGL\\ObjForGL\\ObjForGL\\objForGL.hpp",
               "RelativeDocumentMoniker": "ObjForGL\\objForGL.hpp",
               "ToolTip": "E:\\Programming\\OpenGL\\ObjForGL\\ObjForGL\\objForGL.hpp",
               "RelativeToolTip": "ObjForGL\\objForGL.hpp",
-              "ViewState": "AgIAAB4AAAAAAAAAAAApwDQAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAApwDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-08T15:19:16.076Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "objLoader.hpp",
               "DocumentMoniker": "E:\\Programming\\OpenGL\\ObjForGL\\ObjForGL\\objLoader.hpp",
               "RelativeDocumentMoniker": "ObjForGL\\objLoader.hpp",
               "ToolTip": "E:\\Programming\\OpenGL\\ObjForGL\\ObjForGL\\objLoader.hpp",
               "RelativeToolTip": "ObjForGL\\objLoader.hpp",
-              "ViewState": "AgIAAFQAAAAAAAAAAIAwwGUAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAgwGQAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-02T20:12:43.974Z",
               "EditorCaption": ""
@@ -79,7 +93,7 @@
               "RelativeDocumentMoniker": "UnitTests\\UnitTests.cpp",
               "ToolTip": "E:\\Programming\\OpenGL\\ObjForGL\\UnitTests\\UnitTests.cpp",
               "RelativeToolTip": "UnitTests\\UnitTests.cpp",
-              "ViewState": "AgIAACkAAAAAAAAAAAAAwDkAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAgwEIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-02T20:10:54.01Z",
               "EditorCaption": ""

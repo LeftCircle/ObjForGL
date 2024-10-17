@@ -1,0 +1,47 @@
+﻿  pch.cpp
+  UnitTests.cpp
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objForGL.hpp(73,46): warning C4267: 'return': conversion from 'size_t' to 'const int', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objForGL.hpp(74,50): warning C4267: 'return': conversion from 'size_t' to 'const int', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(69,3): warning C4002: too many arguments for function-like macro invocation 'assert'
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(68,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(112,47): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(112,44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(112,41): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(115,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(115,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(115,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(118,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(118,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(118,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+     Creating library E:\Programming\OpenGL\ObjForGL\x64\Release\UnitTests.lib and object E:\Programming\OpenGL\ObjForGL\x64\Release\UnitTests.exp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 777 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  UnitTests.vcxproj -> E:\Programming\OpenGL\ObjForGL\x64\Release\UnitTests.dll

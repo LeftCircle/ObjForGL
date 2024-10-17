@@ -5,10 +5,37 @@ E:\Programming\OpenGL\ObjForGL\ObjForGL\objForGL.hpp(73,46): warning C4267: 'ret
 E:\Programming\OpenGL\ObjForGL\ObjForGL\objForGL.hpp(74,50): warning C4267: 'return': conversion from 'size_t' to 'const int', possible loss of data
   (compiling source file '/UnitTests.cpp')
   
-E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(69,3): warning C4002: too many arguments for function-like macro invocation 'assert'
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(70,3): warning C4002: too many arguments for function-like macro invocation 'assert'
   (compiling source file '/UnitTests.cpp')
   
-E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(68,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(69,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(115,47): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(115,44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(115,41): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(118,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(118,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(118,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(121,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(121,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/UnitTests.cpp')
+  
+E:\Programming\OpenGL\ObjForGL\ObjForGL\objLoader.hpp(121,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   (compiling source file '/UnitTests.cpp')
   
      Creating library E:\Programming\OpenGL\ObjForGL\x64\Debug\UnitTests.lib and object E:\Programming\OpenGL\ObjForGL\x64\Debug\UnitTests.exp

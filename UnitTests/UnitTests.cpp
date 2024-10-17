@@ -22,7 +22,7 @@ namespace UnitTests
 		TEST_METHOD(TESTLoadObjFile)
 		{
 			ObjLoader obj_loader;
-			Assert::IsTrue(obj_loader.loadObjFile(yoda_path));
+			Assert::IsTrue(obj_loader.loadObjFile(two_group_test));
 		}
 
 		TEST_METHOD(TESTStringSplit)
@@ -63,6 +63,51 @@ namespace UnitTests
 			Assert::AreEqual(expected_g1_faces, (int)meshes[0].NF());
 			Assert::AreEqual(expected_g2_vertices, (int)meshes[1].NV());
 			Assert::AreEqual(expected_g2_faces, (int)meshes[1].NF());
+		}
+		TEST_METHOD(TESTYodaNVertices)
+		{
+			ObjLoader obj_loader;
+			obj_loader.loadObjFile(yoda_path);
+
+			const int expected_hair_vertices = 15840;
+			const std::vector<rc::ObjMesh>& meshes = obj_loader.getObjMeshes();
+			Assert::AreEqual(expected_hair_vertices, (int)meshes[0].NV());
+		}
+		// faces come as v/vt/vn or v//vn or v/vt or v
+		// we will be given a line of three or four v/vt/vn or v//vn or v/vt or v
+		TEST_METHOD(TESTReadThreeVTNFaces)
+		{
+			// Get the v/vt/vn from f 1/2/3 101/102/103 1001/1002/1003
+			// and see that we have a vertex face of objFaceIndeces(1, 101, 1001)
+			// vertex_texture face of objFaceIndeces(2, 101, 1002) etc
+			rc::objFaceIndeces expected_vertex_face = { 1, 101, 1001 };
+			rc::objFaceIndeces expected_texture_face = { 2, 102, 1002 };
+			rc::objFaceIndeces expected_normal_face = { 3, 103, 1003 };
+			std::string line = "f 1/2/3 101/102/103 1001/1002/1003";
+			rc::ObjMesh mesh;
+			ObjLoader obj_loader;
+			obj_loader.add_face_indexes(mesh, line);
+			for (int i = 0; i < 3; i++) {
+				Assert::AreEqual(expected_vertex_face[i], mesh.vertex_faces[0][i]);
+				Assert::AreEqual(expected_texture_face[i], mesh.tex_coord_faces[0][i]);
+				Assert::AreEqual(expected_normal_face[i], mesh.normal_faces[0][i]);
+			}
+		}
+		TEST_METHOD(TESTReadFourVTNFaces)
+		{
+			// Given a quad
+		}
+		TEST_METHOD(TESTReadVNFaces)
+		{
+			// Given a face with no texture coordinates
+		}
+		TEST_METHOD(TESTReadVTFaces)
+		{
+			// Given a face with no normals
+		}
+		TEST_METHOD(TESTReadVFaces)
+		{
+			// Given a face with no normals or texture coordinates
 		}
 	};
 }

@@ -14,6 +14,7 @@ bool is_obj_file(const std::string& path) {
 }
 
 size_t split_string(const std::string& line, std::vector<std::string>& tokens, char delimiter) {
+	tokens.clear();
 	std::string token;
 	std::istringstream tokenStream(line);
 	while (std::getline(tokenStream, token, delimiter)) {
@@ -24,7 +25,7 @@ size_t split_string(const std::string& line, std::vector<std::string>& tokens, c
 
 class ObjLoader
 {
-    // OBJ File format:
+	// OBJ File format:
 	// mtllib [filename].mtl
 	// v [x] [y] [z]
 	// vt [u] [v]
@@ -50,7 +51,7 @@ private:
 		mesh.tex_coord_faces.push_back(vt_face);
 		mesh.normal_faces.push_back(vn_face);
 	}
-	
+
 	void _add_faces_to_mesh(rc::ObjMesh& mesh, const std::vector<std::string>& tokens) {
 		// The face format is f [v1]/[vt1]/[vn1] [v2]/[vt2]/[vn2] [v3]/[vt3]/[vn3]
 		// or f [v1]/[vt1]/[vn1] [v2]/[vt2]/[vn2] [v3]/[vt3]/[vn3] [v4]/[vt4]/[vn4]
@@ -68,12 +69,12 @@ private:
 		int n_face_tokens = tokens.size() - f_start_index;
 		assert(n_face_tokens == 3 or n_face_tokens == 4, "Only support for triangles and quads");
 		static std::vector<std::string> v_n_t_faces;
-		static std::vector<std::string> first_triangle_tokens= { tokens[f_start_index], tokens[f_start_index + 1], tokens[f_start_index + 2] };
+		static std::vector<std::string> first_triangle_tokens = { tokens[f_start_index], tokens[f_start_index + 1], tokens[f_start_index + 2] };
 		static std::vector<std::string> second_triangle_tokens;
-		
+
 		_write_three_token_face_to_mesh(mesh, first_triangle_tokens, v_n_t_faces);
 
-		if(n_face_tokens == 4)
+		if (n_face_tokens == 4)
 		{
 			second_triangle_tokens = { tokens[f_start_index], tokens[f_start_index + 2], tokens[f_start_index + 3] };
 			_write_three_token_face_to_mesh(mesh, second_triangle_tokens, v_n_t_faces);
@@ -85,31 +86,39 @@ private:
 		rc::ObjMesh mesh;
 		bool reading_f = false;
 		std::string line;
+		double x, y, z;
+		std::vector<std::string> v_n_t_faces = { "", "", "", "" };
 		while (std::getline(file, line)) {
-			// We need the first two characters to determine what the line is.
-			if (line.size() < 2) {
+			if (line.size() < 2 or line[0] == '#') {
 				continue;
 			}
-			if (line[0] == 'f' and line[1] == ' ') {
-				reading_f = true;
-				std::vector<std::string> tokens;
-				split_string(line, tokens, ' ');
-				_add_faces_to_mesh(mesh, tokens);
+
+			std::istringstream iss(line);
+			std::string id;
+			iss >> id;
+			if (id != "f") {
+				iss >> x >> y >> z;
 			}
-			if (reading_f and line[0] != 'f') {
+
+			if (reading_f and id != "f") {
 				// create a new mesh and continue
 				_meshes.push_back(mesh);
 				mesh = rc::ObjMesh();
 				reading_f = false;
 			}
-			if (line[0] == 'v' and line[1] == ' ') {
-				// Add the vertex into the mesh. 
-				// Vertex format in the obj file is v 0.000000 1.000000 0.000000
-				// split the line by spaces and create a vec3 from the next 3 values
-				std::vector<std::string> tokens;
-				split_string(line, tokens, ' ');
-				mesh.vertices.push_back(rc::Vector3(std::stof(tokens[1]), std::stof(tokens[2]), std::stof(tokens[3])));
 
+			if (id == "f") {
+				reading_f = true;
+				add_face_indexes(mesh, line);
+			}
+			else if (id == "v") {
+				mesh.vertices.push_back(rc::Vector3(x, y, z));
+			}
+			else if (id == "vt") {
+				mesh.tex_coords.push_back(rc::Vector3(x, y, z));
+			}
+			else if (id == "vn") {
+				mesh.normals.push_back(rc::Vector3(x, y, z));
 			}
 		}
 		// add the last mesh if it has any data
@@ -118,18 +127,61 @@ private:
 		}
 	}
 
+	void _add_value_to_v_or_t_or_n(rc::objFaceIndeces& v_face, rc::objFaceIndeces& vt_face, rc::objFaceIndeces& vn_face, const int value, const int vtn_case, const int face_xyz)
+	{
+		if (vtn_case == 0) {
+			v_face[face_xyz] = value;
+		}
+		else if (vtn_case == 1) {
+			vt_face[face_xyz] = value;
+		}
+		else if (vtn_case == 2) {
+			vn_face[face_xyz] = value;
+		}
+	}
+
+	void _add_face_indexes_from_vtn(rc::objFaceIndeces& v_face, rc::objFaceIndeces& vt_face, rc::objFaceIndeces& vn_face, const std::string& line, const int face_xyz)
+	{
+		// We have been given the string of either v/vt/vn or v//vn or v/vt or v
+		// We need to split the string by / and convert the values to integers, then add to the correct face.
+		int vtn_case = 0; // 0 = vertex, 1 = texture, 2 = normal
+		unsigned int value = 0;
+		for (char c : line) {
+			if (c == '/') {
+				vtn_case = (vtn_case + 1) % 3;
+				value = 0;
+			}
+			else if (c >= '0' and c <= '9') {
+				int current_number = c - '0';
+				value = value * 10 + current_number;
+				_add_value_to_v_or_t_or_n(v_face, vt_face, vn_face, value, vtn_case, face_xyz);
+			}
+		}
+
+	}
+
+	void _add_faces_to_mesh_with_vtn_strings(rc::ObjMesh& mesh, const std::string& s1, const std::string& s2, const std::string& s3) {
+		rc::objFaceIndeces v_face, vt_face, vn_face;
+		_add_face_indexes_from_vtn(v_face, vt_face, vn_face, s1, 0);
+		_add_face_indexes_from_vtn(v_face, vt_face, vn_face, s2, 1);
+		_add_face_indexes_from_vtn(v_face, vt_face, vn_face, s3, 2);
+		mesh.vertex_faces.push_back(v_face);
+		mesh.tex_coord_faces.push_back(vt_face);
+		mesh.normal_faces.push_back(vn_face);
+	}
+
 
 public:
 	ObjLoader() {};
 	~ObjLoader() {}; // Remove this line
 
-    bool loadObjFile(const std::string& path) 
-    {
-        if (!is_obj_file(path)) {
-            return false;
-        }
+	bool loadObjFile(const std::string& path)
+	{
+		if (!is_obj_file(path)) {
+			return false;
+		}
 		// add the current path to the file name
-		
+
 		std::ifstream file(path);
 		if (!file.is_open()) {
 			std::cerr << "Failed to open file: " << path << std::endl;
@@ -137,10 +189,21 @@ public:
 		}
 		_build_obj_meshes(file);
 		return true;
-    }
+	}
 
 	std::vector<rc::ObjMesh>& getObjMeshes() { return _meshes; }
 	const std::vector<rc::ObjMesh>& getObjMeshes() const { return _meshes; }
+
+	void add_face_indexes(rc::ObjMesh& mesh, const std::string& line) {
+		std::istringstream iss(line);
+		std::string id, f0, f1, f2, f3;
+		iss >> id >> f0 >> f1 >> f2;
+		_add_faces_to_mesh_with_vtn_strings(mesh, f0, f1, f2);
+		if (iss >> f3) {
+			_add_faces_to_mesh_with_vtn_strings(mesh, f0, f2, f3);
+		}
+	}
 };
+
 
 #endif // OBJLOADER_H
