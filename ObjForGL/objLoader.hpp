@@ -40,7 +40,7 @@ private:
 	std::vector<rc::ObjMesh> _meshes;
 
 	void _write_three_token_face_to_mesh(rc::ObjMesh& mesh, const std::vector<std::string>& tokens, std::vector<std::string>& scratch) {
-		rc::objFaceIndeces v_face, vt_face, vn_face;
+		rc::ObjFaceIndeces v_face, vt_face, vn_face;
 		for (int i = 0; i < 3; i++) {
 			split_string(tokens[i], scratch, '/');
 			v_face[i] = std::stoi(scratch[0]);
@@ -127,7 +127,7 @@ private:
 		}
 	}
 
-	void _add_value_to_v_or_t_or_n(rc::objFaceIndeces& v_face, rc::objFaceIndeces& vt_face, rc::objFaceIndeces& vn_face, const int value, const int vtn_case, const int face_xyz)
+	void _add_value_to_v_or_t_or_n(rc::ObjFaceIndeces& v_face, rc::ObjFaceIndeces& vt_face, rc::ObjFaceIndeces& vn_face, const int value, const int vtn_case, const int face_xyz)
 	{
 		if (vtn_case == 0) {
 			v_face[face_xyz] = value;
@@ -140,7 +140,7 @@ private:
 		}
 	}
 
-	void _add_face_indexes_from_vtn(rc::objFaceIndeces& v_face, rc::objFaceIndeces& vt_face, rc::objFaceIndeces& vn_face, const std::string& line, const int face_xyz)
+	void _add_face_indexes_from_vtn(rc::ObjFaceIndeces& v_face, rc::ObjFaceIndeces& vt_face, rc::ObjFaceIndeces& vn_face, const std::string& line, const int face_xyz)
 	{
 		// We have been given the string of either v/vt/vn or v//vn or v/vt or v
 		// We need to split the string by / and convert the values to integers, then add to the correct face.
@@ -161,7 +161,7 @@ private:
 	}
 
 	void _add_faces_to_mesh_with_vtn_strings(rc::ObjMesh& mesh, const std::string& s1, const std::string& s2, const std::string& s3) {
-		rc::objFaceIndeces v_face, vt_face, vn_face;
+		rc::ObjFaceIndeces v_face, vt_face, vn_face;
 		_add_face_indexes_from_vtn(v_face, vt_face, vn_face, s1, 0);
 		_add_face_indexes_from_vtn(v_face, vt_face, vn_face, s2, 1);
 		_add_face_indexes_from_vtn(v_face, vt_face, vn_face, s3, 2);

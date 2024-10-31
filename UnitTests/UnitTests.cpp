@@ -80,9 +80,9 @@ namespace UnitTests
 			// Get the v/vt/vn from f 1/2/3 101/102/103 1001/1002/1003
 			// and see that we have a vertex face of objFaceIndeces(1, 101, 1001)
 			// vertex_texture face of objFaceIndeces(2, 101, 1002) etc
-			rc::objFaceIndeces expected_vertex_face = { 1, 101, 1001 };
-			rc::objFaceIndeces expected_texture_face = { 2, 102, 1002 };
-			rc::objFaceIndeces expected_normal_face = { 3, 103, 1003 };
+			rc::ObjFaceIndeces expected_vertex_face = { 1, 101, 1001 };
+			rc::ObjFaceIndeces expected_texture_face = { 2, 102, 1002 };
+			rc::ObjFaceIndeces expected_normal_face = { 3, 103, 1003 };
 			std::string line = "f 1/2/3 101/102/103 1001/1002/1003";
 			rc::ObjMesh mesh;
 			ObjLoader obj_loader;
@@ -96,6 +96,19 @@ namespace UnitTests
 		TEST_METHOD(TESTReadFourVTNFaces)
 		{
 			// Given a quad
+			// Get the v/vt/vn from f 1/2/3 101/102/103 1001/1002/1003 10001/10002/10003
+			// and see that we have a vertex face of objFaceIndeces(1, 101, 1001, 10001)
+			rc::ObjFaceIndeces expected_vf_a = { 1, 101, 1001 };
+			rc::ObjFaceIndeces expected_vf_b = { 1, 1001, 10001 };
+			std::string line = "f 1/2/3 101/102/103 1001/1002/1003 10001/10002/10003";
+			rc::ObjMesh mesh;
+			ObjLoader obj_loader;
+			obj_loader.add_face_indexes(mesh, line);
+			for (int i = 0; i < 3; i++) {
+				Assert::AreEqual(expected_vf_a[i], mesh.vertex_faces[0][i]);
+				Assert::AreEqual(expected_vf_b[i], mesh.vertex_faces[1][i]);
+			}
+
 		}
 		TEST_METHOD(TESTReadVNFaces)
 		{
