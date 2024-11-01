@@ -122,5 +122,21 @@ namespace UnitTests
 		{
 			// Given a face with no normals or texture coordinates
 		}
+
+		TEST_METHOD(TESTGLMeshRuns)
+		{
+			rc::GLMesh glMesh;
+
+			ObjLoader obj_loader;
+			obj_loader.loadObjFile(two_group_test);
+
+			const std::vector<rc::ObjMesh>& meshes = obj_loader.getObjMeshes();
+			// Convert the obj mesh to a gl mesh
+			glMesh.transformObjToGL(meshes[0]);
+			Assert::IsTrue(glMesh.NV() > 0);
+			Assert::AreEqual(glMesh.NV(), glMesh.NN());
+			Assert::AreEqual(glMesh.NV(), glMesh.NT());
+
+		}
 	};
 }

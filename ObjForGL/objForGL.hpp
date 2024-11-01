@@ -97,9 +97,12 @@ namespace rc {
 	};
 
 
-	// struct for a mesh in OpenGL. Each vertex, normal, and position index corresponds to the 
+	// Class for a mesh in OpenGL. Each vertex, normal, and position index corresponds to the 
 	// same vertice in the mesh.
-	class glMesh
+
+	// Might be better to create an obj to glMesh class that takes an objMesh and converts it to a glMesh
+	// This way we can keep the GlMesh class simple and not have to worry about conversion functions
+	class GLMesh
 	{
 	private:
 		std::vector<Vector3> _vertices;
@@ -129,11 +132,10 @@ namespace rc {
 				locations.emplace(point, new_index);
 			
 			if (result.second) {
-				_add_new_vtn_and_element(
-					mesh.V(point.vert_index),
-					mesh.VN(point.normal_index),
-					mesh.VT(point.texture_index),
-					new_index);
+				const Vector3& v = mesh.V(point.vert_index - 1);
+				const Vector3& n = mesh.VN(point.normal_index - 1);
+				const Vector3& t = mesh.VT(point.texture_index - 1);
+				_add_new_vtn_and_element(v, n, t, new_index);
 			}
 			else {
 				int existingElementIndex = result.first->second;
@@ -169,6 +171,17 @@ namespace rc {
 			for (int i = 0; i < n_faces; ++i) {
 				_create_faces_and_add_values(mesh, locations, i);
 			}
+		};
+
+		const std::vector<Vector3>& getVertices() const { return _vertices; };
+		const std::vector<Vector3>& getNormals() const { return _normals; };
+		const std::vector<Vector3>& getTexCoords() const { return _tex_coords; };
+		const std::vector<int>& getElements() const { return _elements; };
+
+		const int NV() const { return _vertices.size(); };
+		const int NE() const { return _elements.size(); };
+		const int NN() const { return _normals.size(); };
+		const int NT() const { return _tex_coords.size();
 		};
 	};
 }

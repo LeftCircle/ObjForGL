@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "E:\\Programming\\OpenGL\\ObjForGL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E9E06189-A2E3-40C7-9754-6E5FED44E610}|ObjForGL\\ObjForGL.vcxproj|E:\\Programming\\OpenGL\\ObjForGL\\OBJFORGL\\OBJFORGL.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E9E06189-A2E3-40C7-9754-6E5FED44E610}|ObjForGL\\ObjForGL.vcxproj|solutionrelative:OBJFORGL\\OBJFORGL.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{FA61A42F-985A-4936-BB25-99026CFAAEC3}|UnitTests\\UnitTests.vcxproj|E:\\Programming\\OpenGL\\ObjForGL\\UnitTests\\UnitTests.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FA61A42F-985A-4936-BB25-99026CFAAEC3}|UnitTests\\UnitTests.vcxproj|solutionrelative:UnitTests\\UnitTests.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9E06189-A2E3-40C7-9754-6E5FED44E610}|ObjForGL\\ObjForGL.vcxproj|E:\\Programming\\OpenGL\\ObjForGL\\ObjForGL\\objForGL.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E9E06189-A2E3-40C7-9754-6E5FED44E610}|ObjForGL\\ObjForGL.vcxproj|solutionrelative:ObjForGL\\objForGL.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E9E06189-A2E3-40C7-9754-6E5FED44E610}|ObjForGL\\ObjForGL.vcxproj|E:\\Programming\\OpenGL\\ObjForGL\\OBJFORGL\\OBJLOADER.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E9E06189-A2E3-40C7-9754-6E5FED44E610}|ObjForGL\\ObjForGL.vcxproj|E:\\Programming\\OpenGL\\ObjForGL\\ObjForGL\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E9E06189-A2E3-40C7-9754-6E5FED44E610}|ObjForGL\\ObjForGL.vcxproj|solutionrelative:ObjForGL\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA61A42F-985A-4936-BB25-99026CFAAEC3}|UnitTests\\UnitTests.vcxproj|E:\\Programming\\OpenGL\\ObjForGL\\UnitTests\\UnitTests.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FA61A42F-985A-4936-BB25-99026CFAAEC3}|UnitTests\\UnitTests.vcxproj|solutionrelative:UnitTests\\UnitTests.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,7 +34,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "main.cpp",
               "DocumentMoniker": "E:\\Programming\\OpenGL\\ObjForGL\\ObjForGL\\main.cpp",
               "RelativeDocumentMoniker": "ObjForGL\\main.cpp",
@@ -47,39 +47,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "objForGL.hpp",
               "DocumentMoniker": "E:\\Programming\\OpenGL\\ObjForGL\\ObjForGL\\objForGL.hpp",
               "RelativeDocumentMoniker": "ObjForGL\\objForGL.hpp",
               "ToolTip": "E:\\Programming\\OpenGL\\ObjForGL\\ObjForGL\\objForGL.hpp",
               "RelativeToolTip": "ObjForGL\\objForGL.hpp",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAEoAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAswIgAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-08T15:19:16.076Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "objLoader.hpp",
               "DocumentMoniker": "E:\\Programming\\OpenGL\\ObjForGL\\ObjForGL\\objLoader.hpp",
               "RelativeDocumentMoniker": "ObjForGL\\objLoader.hpp",
               "ToolTip": "E:\\Programming\\OpenGL\\ObjForGL\\ObjForGL\\objLoader.hpp",
               "RelativeToolTip": "ObjForGL\\objLoader.hpp",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADEAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-02T20:12:43.974Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "UnitTests.cpp",
               "DocumentMoniker": "E:\\Programming\\OpenGL\\ObjForGL\\UnitTests\\UnitTests.cpp",
               "RelativeDocumentMoniker": "UnitTests\\UnitTests.cpp",
               "ToolTip": "E:\\Programming\\OpenGL\\ObjForGL\\UnitTests\\UnitTests.cpp",
               "RelativeToolTip": "UnitTests\\UnitTests.cpp",
-              "ViewState": "AgIAADEAAAAAAAAAAAAgwHEAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAUwIYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-02T20:10:54.01Z",
               "EditorCaption": ""
